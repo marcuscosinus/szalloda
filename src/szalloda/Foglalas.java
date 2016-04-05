@@ -1,5 +1,8 @@
 package szalloda;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Foglalas {
     
     protected int fogl_sor;
@@ -12,6 +15,7 @@ public class Foglalas {
     
     protected int tartozkodas;
     protected int potagy;
+    protected List<Integer> foglaltNapok;
 
     public Foglalas(int sor, int szoba, int erk, int tav, int fo, int reggeli, String id) {
         this.fogl_sor = sor;
@@ -21,12 +25,20 @@ public class Foglalas {
         this.fo = fo;
         this.reggeli = reggeli;
         this.id = id;
+        this.foglaltNapok = new ArrayList<Integer>();
+        
         
         this.tartozkodas = this.tav - this.erk;
         
         if (this.fo > 2) {
             this.potagy = 1;
         } else {this.potagy = 0;}
+        
+        
+        
+        for (int i = this.erk; i < (this.erk + this.tartozkodas); i++) {
+            this.foglaltNapok.add(i);
+        }
 
     }
 }

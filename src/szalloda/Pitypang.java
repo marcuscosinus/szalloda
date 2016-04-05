@@ -141,47 +141,28 @@ public class Pitypang extends Szalloda {
             Logger.getLogger(Pitypang.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
-        
-        
-        int[] napok = new int[ejszakakSzama];
-        
-        for (int i = 0; i < napok.length; i++) {
-            napok[i] = kezdoNap++;
+        List<Integer> napok = new ArrayList<>(kezdoNap + ejszakakSzama);
+
+        for (int i = kezdoNap; i <= (kezdoNap + ejszakakSzama); i++) {
+            napok.add(i);
         }
-        
-        
-        kulso:
+
         for (int i = 0; i < this.foglalas.size(); i++) {
-            int erk = this.foglalas.get(i).erk;
-            int tav = this.foglalas.get(i).tav;
-            int k = 0;
-            for (int j = erk; erk < tav; erk++) {
-                
-                if (napok[k] == j) {
-                    
-                    System.out.println(this.foglalas.get(i).id
-                            + " foglalt " + this.foglalas.get(i).erk
-                            + " - " + this.foglalas.get(i).tav
-                            + "-ig");
-                    //break kulso;
-                } else {k++;}
+            if (szabadSzoba > 0) {
+                for (int j = 0; j < this.foglalas.get(i).tartozkodas; j++) {
+                    if ((napok.contains(this.foglalas.get(i).foglaltNapok.get(j)))) {
+                        System.out.println("Foglalja: " + this.foglalas.get(i).id + " " + this.foglalas.get(i).erk + " - " + this.foglalas.get(i).tav);
+                        szabadSzoba--;
+                        break;
+                    }
+                }
+            } else {
+                break;
             }
-            
-            
-                //szabadSzoba--;
-                
-               // k++;
-               // break kulso;
-            }
-            
-            
-                    
-          
+
+            System.out.println("Szabad szoba: " + szabadSzoba);
 
         }
-
     }
 
-    
-
+}

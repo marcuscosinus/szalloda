@@ -44,7 +44,7 @@ public class Main {
 
         Pitypang pitypang = new Pitypang(foglalasPath);
         
-        pitypang.kiIr();
+       // pitypang.kiIr();
         pitypang.foglalas();
         //System.out.println(pitypang.fizetes(honapok));
 
