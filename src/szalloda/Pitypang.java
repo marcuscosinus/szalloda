@@ -151,7 +151,7 @@ public class Pitypang extends Szalloda {
             if (szabadSzoba > 0) {
                 for (int j = 0; j < this.foglalas.get(i).tartozkodas; j++) {
                     if ((napok.contains(this.foglalas.get(i).foglaltNapok.get(j)))) {
-                        System.out.println("Foglalja: " + this.foglalas.get(i).id + " " + this.foglalas.get(i).erk + " - " + this.foglalas.get(i).tav);
+                        System.out.println("Foglalja: " + this.foglalas.get(i).id + " : " + this.foglalas.get(i).erk + " - " + this.foglalas.get(i).tav);
                         szabadSzoba--;
                         break;
                     }
@@ -160,9 +160,10 @@ public class Pitypang extends Szalloda {
                 break;
             }
 
-            System.out.println("Szabad szoba: " + szabadSzoba);
+            
 
         }
+        System.out.println("Szabad szoba: " + szabadSzoba);
     }
 
 }
