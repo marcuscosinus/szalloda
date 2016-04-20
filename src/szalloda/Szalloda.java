@@ -16,7 +16,7 @@ abstract class Szalloda {
     
     abstract String leghosszabb();
     abstract String fizetes(List<Honapok> honapok);
-    abstract String statisztika();
+    abstract void statisztika(List<Honapok> honapok);
     abstract void foglalas();
     
 }

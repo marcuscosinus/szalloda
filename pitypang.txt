@@ -1,10 +1,10 @@
 984
-1 5 3 13 1 1 Huszar_Hajnalka
-2 6 3 6 2 1 Bodi_Katalin
-3 7 3 9 2 0 Agoston_Gyula
-4 8 4 12 2 0 Kerner_Imre
-5 9 4 17 2 0 Csepes_Erzsebet
-6 15 4 8 1 0 Gal_Anna
+1 5 3 13 1 1 Huszar_Hajnalka 
+2 6 3 6 2 1 Bodi_Katalin     
+3 7 3 9 2 0 Agoston_Gyula    
+4 8 4 12 2 0 Kerner_Imre     
+5 9 4 17 2 0 Csepes_Erzsebet 
+6 15 4 8 1 0 Gal_Anna        
 7 6 6 16 2 1 Damjan_Valeria
 8 16 6 9 2 1 Fozer_Judit
 9 17 6 13 1 1 Szalai_Tibor

@@ -44,24 +44,12 @@ public class Main {
 
         Pitypang pitypang = new Pitypang(foglalasPath);
         
-       // pitypang.kiIr();
-        pitypang.foglalas();
-        //System.out.println(pitypang.fizetes(honapok));
-
-        
        
-        
-        
-          
-        
-            
-        /*
-        for (int k = 0; k < honapok.size(); k++) {
-            System.out.println("Név: " + honapok.get(k).nev);
-            System.out.println("Napok száma: " + honapok.get(k).napokSzama);
-            System.out.println("Sorszáma: " + honapok.get(k).sorszam);
-            System.out.println("");
-        }
-         */
+       // System.out.println(pitypang.leghosszabb());
+       // System.out.println(pitypang.fizetes(honapok));
+       // pitypang.statisztika(honapok);
+        pitypang.foglalas();
+
+
     }
 }
