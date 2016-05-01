@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package szalloda;
 
 import java.io.File;
@@ -12,23 +7,32 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.String;
 
-/**
- *
- * @author Marcus
- */
+
 public class Main {
 
     public static void main(String[] args)
             throws FileNotFoundException, IOException {
 
         
+        Path honapokPath = null;
+        Path foglalasPath = null;
+        Pitypang pitypang = null;
+        List<String> honapTemp = null;
+        
+        
+        honapokPath = new File("honapok.txt").toPath();
+        foglalasPath = new File("pitypang.txt").toPath();
 
-        Path honapokPath = new File("honapok.txt").toPath();
-        Path foglalasPath = new File("pitypang.txt").toPath();
-
-        List<String> honapTemp = Files.readAllLines(honapokPath);
+        
+        try {
+            honapTemp = Files.readAllLines(honapokPath);
+        } catch (FileNotFoundException ioe) {
+            System.err.println("Fájl beolvasási hiba: " + ioe.getMessage());
+        } catch (IOException ioe) {
+            System.err.println("IO hiba: " + ioe.getMessage());
+        }
+        
         List<Honapok> honapok = new ArrayList<>();
         
 
@@ -39,17 +43,20 @@ public class Main {
                     Integer.parseInt(honapTemp.get(j + 2))
             )
             );
-
         }
 
-        Pitypang pitypang = new Pitypang(foglalasPath);
         
-       
-       // System.out.println(pitypang.leghosszabb());
-       // System.out.println(pitypang.fizetes(honapok));
-       // pitypang.statisztika(honapok);
+        try {
+            pitypang = new Pitypang(foglalasPath);
+        } catch (IOException iOException) {
+            System.err.println("IO hiba! " + iOException.getMessage());
+        }
+        
+        // Feladatok meghívása
+        System.out.println(pitypang.leghosszabb());
+        pitypang.fizetes(honapok);
+        pitypang.statisztika(honapok);
         pitypang.foglalas();
-
 
     }
 }

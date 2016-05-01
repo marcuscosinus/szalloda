@@ -1,22 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package szalloda;
 
 import java.util.List;
 
-/**
- *
- * @author Marcus
- */
-abstract class Szalloda {
+public interface Szalloda {
     
+    int TAVASZ = 9000;
+    int NYÁR = 10000;
+    int ŐSZ = 8000;
+    int PÓTÁGY = 2000;
+    int REGGELI = 1100;
     
-    abstract String leghosszabb();
-    abstract String fizetes(List<Honapok> honapok);
-    abstract void statisztika(List<Honapok> honapok);
-    abstract void foglalas();
+    String leghosszabb();
+    void fizetes(List<Honapok> honapok);
+    void statisztika(List<Honapok> honapok);
+    void foglalas();
     
 }

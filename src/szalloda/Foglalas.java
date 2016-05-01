@@ -17,6 +17,8 @@ public class Foglalas {
     protected int potagy;
     protected List<Integer> foglaltNapok;
     protected int vendegEjszaka;
+    
+    
 
     public Foglalas(int sor, int szoba, int erk, int tav, int fo, int reggeli, String id) {
         this.fogl_sor = sor;
@@ -55,5 +57,4 @@ public class Foglalas {
     public int getFo() {
         return fo;
     }
-
 }
